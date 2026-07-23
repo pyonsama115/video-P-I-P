@@ -11,18 +11,46 @@
       <p class="eyebrow">VIDEO PIP TOPMOST</p>
       <h1>動画を最前面に表示</h1>
       <p class="description">
-        YouTubeまたはNetflixで動画を再生してから実行してください。
+        YouTubeまたはNetflixで動画を再生し、再生バー内のPiPアイコンを押してください。
       </p>
 
-      <button id="toggle" type="button">
-        <span class="button-icon" aria-hidden="true">▣</span>
-        PiPを開始・終了
-      </button>
+      <div class="shortcut">
+        <span>Windows</span><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
+        <span>Mac</span><kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
+      </div>
 
-      <p id="status" role="status" aria-live="polite">
-        Windows：Alt + Shift + P<br>
-        Mac：⌘ + Shift + P
-      </p>
+      <section aria-labelledby="help-title">
+        <h2 id="help-title">トラブル対処</h2>
+
+        <details>
+          <summary>PiP映像だけが止まる</summary>
+          <ol>
+            <li>Chromeのシステム設定を開く</li>
+            <li>グラフィック アクセラレーションを切り替える</li>
+            <li>Chromeを再起動して、もう一度試す</li>
+          </ol>
+          <button id="open-system-settings" type="button">
+            Chromeのシステム設定を開く
+          </button>
+          <p id="settings-result" role="status" aria-live="polite"></p>
+        </details>
+
+        <details>
+          <summary>「PiPが拒否されました」と出る</summary>
+          <p>
+            動画を一度クリックして再生し、拡張機能ポップアップではなく、
+            再生バー内のPiPアイコンを直接押してください。
+          </p>
+        </details>
+
+        <details>
+          <summary>再生バーにアイコンが出ない</summary>
+          <p>
+            動画ページを再読み込みしてください。それでも出ない場合は
+            <code>chrome://extensions/</code> でこの拡張機能を再読み込みします。
+          </p>
+        </details>
+      </section>
     </main>
     <script src="popup.js"></script>
   </body>

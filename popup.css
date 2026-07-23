@@ -8,10 +8,10 @@
 }
 
 body {
-  width: 320px;
+  width: 370px;
   margin: 0;
   background:
-    radial-gradient(circle at 85% 0%, rgba(84, 255, 169, 0.18), transparent 38%),
+    radial-gradient(circle at 85% 0%, rgba(84, 255, 169, 0.16), transparent 34%),
     #0c1110;
   color: #f3f7f5;
 }
@@ -25,7 +25,7 @@ main {
   color: #65e6a5;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: .18em;
 }
 
 h1 {
@@ -35,54 +35,100 @@ h1 {
 }
 
 .description {
-  margin: 10px 0 18px;
+  margin: 10px 0 16px;
   color: #aab8b1;
   font-size: 13px;
   line-height: 1.6;
 }
 
-button {
-  display: flex;
-  width: 100%;
+.shortcut {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 9px 8px;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 14px;
-  border: 0;
+  padding: 12px;
+  border: 1px solid rgba(101, 230, 165, .18);
   border-radius: 10px;
+  background: rgba(101, 230, 165, .06);
+  color: #b8c7bf;
+  font-size: 11px;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 22px;
+  padding: 2px 5px;
+  border: 1px solid #3b4741;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #151c19;
+  color: #edf5f1;
+  font: 600 10px/1.4 inherit;
+  text-align: center;
+}
+
+section {
+  margin-top: 20px;
+}
+
+h2 {
+  margin: 0 0 9px;
+  color: #d8e4de;
+  font-size: 13px;
+}
+
+details {
+  border-top: 1px solid #26302b;
+}
+
+details:last-child {
+  border-bottom: 1px solid #26302b;
+}
+
+summary {
+  padding: 12px 2px;
+  color: #dce8e2;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+details p,
+details ol {
+  margin: 0 0 12px;
+  color: #9eaca5;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+details ol {
+  padding-left: 20px;
+}
+
+button {
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 8px;
   background: #65e6a5;
   color: #07110c;
   cursor: pointer;
   font: inherit;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 800;
 }
 
 button:hover {
-  background: #85efb9;
+  background: #86efba;
 }
 
-button:disabled {
-  cursor: wait;
-  opacity: 0.65;
+code {
+  color: #72e3aa;
 }
 
-.button-icon {
-  font-size: 18px;
-}
-
-#status {
-  min-height: 36px;
-  margin: 12px 0 0;
-  color: #8f9d96;
-  font-size: 11px;
-  line-height: 1.55;
-}
-
-#status[data-error="true"] {
-  color: #ff9797;
-}
-
-#status[data-success="true"] {
-  color: #82eeb8;
+#settings-result {
+  min-height: 17px;
+  margin-top: -5px;
+  color: #7fe9b3;
 }

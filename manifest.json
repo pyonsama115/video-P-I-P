@@ -1,35 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Video PiP Topmost",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "YouTube と Netflix の動画を Windows / macOS の最前面に残る Picture-in-Picture で表示します。",
   "minimum_chrome_version": "111",
-  "permissions": [
-    "activeTab",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://www.youtube.com/*",
-    "https://youtube.com/*",
-    "https://youtu.be/*",
-    "https://www.netflix.com/*",
-    "https://netflix.com/*"
-  ],
-  "background": {
-    "service_worker": "service-worker.js"
-  },
   "action": {
     "default_title": "動画を Picture-in-Picture で表示",
     "default_popup": "popup.html"
   },
-  "commands": {
-    "toggle-picture-in-picture": {
-      "suggested_key": {
-        "default": "Alt+Shift+P",
-        "mac": "Command+Shift+P"
-      },
-      "description": "再生中の動画の Picture-in-Picture を切り替える"
-    }
+  "background": {
+    "service_worker": "service-worker.js"
   },
   "content_scripts": [
     {

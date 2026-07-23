@@ -1,27 +1,24 @@
-const toggleButton = document.getElementById("toggle");
-const status = document.getElementById("status");
+const settingsButton = document.getElementById("open-system-settings");
+const settingsResult = document.getElementById("settings-result");
 
-toggleButton.addEventListener("click", async () => {
-  toggleButton.disabled = true;
-  status.textContent = "動画を確認しています…";
-  delete status.dataset.error;
-  delete status.dataset.success;
+settingsButton.addEventListener("click", async () => {
+  settingsButton.disabled = true;
+  settingsResult.textContent = "";
 
   try {
-    const result = await chrome.runtime.sendMessage({
-      type: "VIDEO_PIP_TOGGLE_ACTIVE_TAB",
+    const response = await chrome.runtime.sendMessage({
+      type: "OPEN_CHROME_SYSTEM_SETTINGS",
     });
 
-    if (!result?.ok) {
-      throw new Error(result?.message || "PiPを開始できませんでした。");
+    if (!response?.ok) {
+      throw new Error(response?.message || "設定を開けませんでした。");
     }
 
-    status.textContent = result.message;
-    status.dataset.success = "true";
-  } catch (error) {
-    status.textContent = error.message;
-    status.dataset.error = "true";
+    settingsResult.textContent = "設定ページを開きました。";
+  } catch {
+    settingsResult.textContent =
+      "アドレス欄に chrome://settings/system を貼り付けてください。";
   } finally {
-    toggleButton.disabled = false;
+    settingsButton.disabled = false;
   }
 });

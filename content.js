@@ -16,6 +16,13 @@
     </svg>
   `;
 
+  const NETFLIX_PIP_ICON = `
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <rect x="3.25" y="5.25" width="14.5" height="11.5" rx="1.5"></rect>
+      <rect x="11.75" y="11.75" width="9" height="7" rx="1.4"></rect>
+    </svg>
+  `;
+
   function installStyles() {
     if (document.getElementById(STYLE_ID)) {
       return;
@@ -58,12 +65,12 @@
 
       .video-pip-topmost-netflix {
         position: absolute;
-        right: 72px;
-        bottom: 38px;
+        right: 66px;
+        bottom: 32px;
         z-index: 50;
-        width: 40px;
-        height: 40px;
-        padding: 8px;
+        width: 52px;
+        height: 52px;
+        padding: 4px;
         border: 0;
         border-radius: 4px;
         background: transparent;
@@ -73,6 +80,17 @@
         pointer-events: none;
         filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .85));
         transition: opacity 160ms ease, transform 120ms ease;
+      }
+
+      #${CONTROL_ID}.video-pip-topmost-netflix svg {
+        width: 44px !important;
+        height: 44px !important;
+        fill: none !important;
+        stroke: currentColor !important;
+        stroke-width: 1.8 !important;
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
+        transform: none !important;
       }
 
       [data-uia="player"].active > .video-pip-topmost-netflix,
@@ -265,6 +283,7 @@
       document.createElement("button"),
       "video-pip-topmost-netflix",
     );
+    button.innerHTML = NETFLIX_PIP_ICON;
     player.append(button);
 
     let hideTimer;

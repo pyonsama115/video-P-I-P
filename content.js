@@ -79,7 +79,12 @@
         opacity: 0;
         pointer-events: none;
         filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .85));
-        transition: opacity 160ms ease;
+        transform: scale(1);
+        transform-origin: center;
+        transition:
+          opacity 160ms ease,
+          transform 150ms cubic-bezier(.2, 0, .2, 1);
+        will-change: transform;
       }
 
       #${CONTROL_ID}.video-pip-topmost-netflix svg {
@@ -91,6 +96,11 @@
         stroke-linecap: round !important;
         stroke-linejoin: round !important;
         transform: none !important;
+      }
+
+      .video-pip-topmost-netflix:hover,
+      .video-pip-topmost-netflix:focus-visible {
+        transform: scale(1.3);
       }
 
       [data-uia="player"].active > .video-pip-topmost-netflix,

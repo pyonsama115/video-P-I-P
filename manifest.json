@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Video PiP Topmost",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "YouTube と Netflix の動画を Windows / macOS の最前面に残る Picture-in-Picture で表示します。",
   "minimum_chrome_version": "111",
   "action": {

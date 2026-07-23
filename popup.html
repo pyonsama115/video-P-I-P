@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video PiP Topmost</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">VIDEO PIP TOPMOST</p>
+      <h1>動画を最前面に表示</h1>
+      <p class="description">
+        YouTubeまたはNetflixで動画を再生してから実行してください。
+      </p>
+
+      <button id="toggle" type="button">
+        <span class="button-icon" aria-hidden="true">▣</span>
+        PiPを開始・終了
+      </button>
+
+      <p id="status" role="status" aria-live="polite">
+        Windows：Alt + Shift + P<br>
+        Mac：⌘ + Shift + P
+      </p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

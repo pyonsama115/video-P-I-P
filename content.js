@@ -65,11 +65,11 @@
 
       .video-pip-topmost-netflix {
         position: absolute;
-        right: 66px;
-        bottom: 32px;
+        right: 242px;
+        bottom: 30px;
         z-index: 50;
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
         padding: 4px;
         border: 0;
         border-radius: 4px;
@@ -83,11 +83,11 @@
       }
 
       #${CONTROL_ID}.video-pip-topmost-netflix svg {
-        width: 44px !important;
-        height: 44px !important;
+        width: 48px !important;
+        height: 48px !important;
         fill: none !important;
         stroke: currentColor !important;
-        stroke-width: 1.8 !important;
+        stroke-width: 1.9 !important;
         stroke-linecap: round !important;
         stroke-linejoin: round !important;
         transform: none !important;

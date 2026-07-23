@@ -28,6 +28,18 @@ main {
   letter-spacing: .18em;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+}
+
 h1 {
   margin: 0;
   font-size: 22px;

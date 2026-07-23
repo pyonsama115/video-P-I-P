@@ -12,7 +12,7 @@
 
   const PIP_ICON = `
     <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M19 7H5v10h6v2H3V5h18v7h-2V7Zm4 8v8H13v-8h10Zm-2 2h-6v4h6v-4Z"></path>
+      <path d="M19 3H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4v-2H5V5h14v6h2V5a2 2 0 0 0-2-2Zm0 10h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm0 6h-6v-4h6v4Z"></path>
     </svg>
   `;
 
@@ -35,24 +35,35 @@
       .video-pip-topmost-youtube {
         display: inline-block !important;
         width: 48px !important;
-        height: 48px !important;
-        padding: 11px !important;
+        height: 40px !important;
+        padding: 0 !important;
         color: #fff !important;
         opacity: .9;
+        vertical-align: top !important;
       }
 
       .video-pip-topmost-youtube:hover {
         opacity: 1;
       }
 
+      #${CONTROL_ID}.video-pip-topmost-youtube svg {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 48px !important;
+        height: 40px !important;
+        padding: 8px 12px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+      }
+
       .video-pip-topmost-netflix {
         position: absolute;
         right: 72px;
-        bottom: 18px;
+        bottom: 38px;
         z-index: 50;
-        width: 48px;
-        height: 48px;
-        padding: 10px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
         border: 0;
         border-radius: 4px;
         background: transparent;
@@ -64,6 +75,7 @@
         transition: opacity 160ms ease, transform 120ms ease;
       }
 
+      [data-uia="player"].active > .video-pip-topmost-netflix,
       .video-pip-topmost-netflix[data-visible="true"],
       .video-pip-topmost-netflix:focus-visible {
         opacity: 1;
@@ -273,7 +285,6 @@
       passive: true,
     });
     button.addEventListener("focus", revealWithControls);
-    revealWithControls();
     return true;
   }
 
